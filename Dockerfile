@@ -15,7 +15,7 @@ RUN pacman -Sy --noconfirm --needed pixman libgcrypt sdl2 zlib libslirp libgpg-e
 # COPY ./qemu/share/qemu/esp32c3-rom.bin /usr/share/qemu/esp32c3-rom.bin
 # COPY ./qemu/share/qemu/esp32s3_rev0_rom.bin /usr/share/qemu/esp32s3_rev0_rom.bin
 COPY ./qemu /tmp/qemu
-RUN rsync -a /tmp/qemu /usr/
+RUN rsync -a /tmp/qemu/ /usr
 
 COPY ./networking.sh /root/networking.sh
 RUN chmod +x /root/networking.sh

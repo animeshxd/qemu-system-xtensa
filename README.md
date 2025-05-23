@@ -30,4 +30,14 @@ Networking is mandatory for QEMU open_eth:
 sudo dhcpd -cf ./dhcpd.conf -f docker0
 ```
 
+Enable Ethernet in ESP-IDF:
+```
+CONFIG_ETH_USE_OPENETH=y
+```
+Add this to your project's sdkconfig or enable it in `menuconfig` under 
+```
+Component config  --->
+  Ethernet  --->
+    [*] Support OpenCores Ethernet MAC (for use with QEMU)                  
+```
 Reference: https://github.com/espressif/esp-toolchain-docs/tree/main/qemu
