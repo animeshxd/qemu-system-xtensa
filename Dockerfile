@@ -1,7 +1,8 @@
 FROM archlinux/archlinux
 
-RUN pacman -Sy --noconfirm --needed pixman libgcrypt sdl2 zlib libslirp libgpg-error glib2 pcre2 rsync
+RUN pacman -Sy --noconfirm --needed pixman libgcrypt sdl2 zlib libslirp libgpg-error glib2 pcre2
 
+RUN pacman -Sy --noconfirm --needed rsync # openbsd-netcat dhcpcd
 # COPY ./qemu/bin/qemu-system-xtensa /usr/bin/qemu-system-xtensa
 # COPY ./qemu/include/fdt.h /usr/include/fdt.h
 # COPY ./qemu/include/libfdt_env.h /usr/include/libfdt_env.h
