@@ -41,3 +41,22 @@ Component config  --->
     [*] Support OpenCores Ethernet MAC (for use with QEMU)                  
 ```
 Reference: https://github.com/espressif/esp-toolchain-docs/tree/main/qemu
+
+## ESP32 Ethernet Code
+
+For QEMU ESP32 Ethernet development:
+
+```c
+// Create OpenETH MAC instance
+esp_eth_mac_t *mac = esp_eth_mac_new_openeth(&mac_config);
+
+// Create DP83848 PHY instance 
+esp_eth_phy_t *phy = esp_eth_phy_new_dp83848(&phy_config);
+```
+
+**OpenETH MAC**: Software Ethernet controller for QEMU virtualization  
+**DP83848 PHY**: Compatible PHY driver that works with OpenETH in emulated environments
+
+References:
+- [ESP-IDF Ethernet API](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/network/esp_eth.html#driver-configuration-and-installation)
+- [ESP-IDF Ethernet OpenETH Example](https://github.com/espressif/esp-idf/blob/27d68f57e6bdd3842cd263585c2c352698a9eda2/examples/common_components/protocol_examples_common/eth_connect.c#L150-L151)
