@@ -20,4 +20,4 @@ RUN rsync -a /tmp/qemu/ /usr
 
 COPY ./networking.sh /root/networking.sh
 RUN chmod +x /root/networking.sh
-CMD ["bash", "/root/networking.sh"]
+ENTRYPOINT ["/root/networking.sh"]
